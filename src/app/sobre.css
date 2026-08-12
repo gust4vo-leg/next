@@ -1,0 +1,54 @@
+.sobre {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.texto {
+    display: flex;
+    max-width: 800px;
+    min-height: 200px;
+}
+
+.fazemos {
+    display: flex;
+    max-width: 1100px;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.texto-top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.txt-desc {
+    font-size: 1.25em;
+}
+
+.sobre-img-empresa img {
+    width: 25vw;
+    position: absolute;
+    top: 15%;
+    right: 25%;
+}
+
+.sobre-img-fazemos img {
+    width: 15vw;
+}
+
+.trabalho {
+    max-width: 1070px;
+}
+
+.sobreImg {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.sobreImg img {
+    width: 25vw;
+}
