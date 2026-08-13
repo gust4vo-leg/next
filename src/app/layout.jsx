@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import "./sobre.css";
+import "./login.css";
 import "./contato.css";
 
 const geistSans = Geist({
@@ -28,7 +29,8 @@ export default function RootLayout({ children }) {
       <body>
         <header>
           <div className="topo-esquerdo">
-            <img src="/imagens/logo.png" alt="logo" />
+            <Link href="/"><img src="/imagens/logo.png" alt="logo" /></Link>
+            
           </div>
           <nav>
             <div className="topo-direito">
@@ -39,17 +41,10 @@ export default function RootLayout({ children }) {
                   </a>
                   <ul className="dropdown-menu">
                     <li>
-                      <Link href="/">Home</Link>
-                    </li>
-                    <li>
                       <Link href="/sobre">Sobre</Link>
                     </li>
                     <li>
                       <Link href="/sobre/empresa">Empresa</Link>
-                    </li>
-
-                    <li>
-                      <Link href="/sobre/contato">Contato</Link>
                     </li>
                   </ul>
                 </li>
@@ -58,15 +53,15 @@ export default function RootLayout({ children }) {
                   <Link href="/sobre/contato">CONTATO</Link>
                 </li>
                 <li>
-                  <a href="#">PODCAST</a>
+                  <Link href="/">HOME</Link>
                 </li>
                 <li>
                   <a href="#">CAREERS</a>
                 </li>
               </ul>
-              <a href="#" className="btn">
-                WORK WITH US
-              </a>
+              <Link href="/sobre/login" className="btn">
+                LOGIN
+              </Link>
             </div>
           </nav>
         </header>
