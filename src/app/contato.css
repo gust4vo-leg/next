@@ -57,7 +57,11 @@
 }
 
 .card2 h2 {
-    color: white;;
+    color: rgb(247, 101, 181);
+}
+
+.card2 .cardTitle {
+    color: rgb(247, 101, 181);
 }
 
 .button {

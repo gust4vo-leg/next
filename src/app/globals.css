@@ -292,7 +292,6 @@ nav .btn {
 footer {
   display: flex;
   background: linear-gradient(120deg, #2563e9, #052979);
-  justify-content: center;
   gap: 5em;
   color: white;
   padding: 20px;
@@ -338,4 +337,43 @@ footer {
   font-size: 1em;
   padding: 5px 10px;
   border-radius: 15px;
+}
+
+.container-notfound {
+  width: 70vw;
+  margin: auto;
+}
+
+.flex-notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.txt-error {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.txt-error button {
+  border: none;
+  background: rgb(247, 101, 181);
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 40px;
+}
+
+.face {
+  width: 300px;
+  height: auto;
+  color: white;
 }

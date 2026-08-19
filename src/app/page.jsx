@@ -1,7 +1,13 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
-export default function Home() {
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+export default async function Home() {
+
+  await sleep(3500);
+
+  throw new Error("Simulando um erro catastrófico!!!");
   return (
     <>
       <main>

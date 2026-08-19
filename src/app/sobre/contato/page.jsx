@@ -22,7 +22,7 @@ export default function Contato() {
             </div>
           </div>
           <div class="card2">
-            <h1>redes sociais:</h1>
+            <h1 className="cardTitle">redes sociais:</h1>
             <div class="contatos">
               <pre>ⓕ facebook: tier</pre>
               <pre>🅾 instagram: @tier</pre>
