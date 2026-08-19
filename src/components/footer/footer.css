@@ -1,0 +1,49 @@
+footer {
+  display: flex;
+  background: linear-gradient(120deg, #2563e9, #052979);
+  gap: 5em;
+  color: white;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuFooter {
+  display: flex;
+  list-style: none;
+  gap: 10em;
+}
+
+.baixo-esquerdo img {
+  width: 5vw;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.top h3 {
+  font-size: 1.5em;
+}
+
+.options-footer ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.options-footer li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.btn-footer {
+  color: white;
+  text-decoration: none;
+  background: rgb(247, 101, 181);
+  margin-top: 5em;
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 15px;
+}

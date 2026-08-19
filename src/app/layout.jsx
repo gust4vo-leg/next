@@ -1,9 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 import "./sobre.css";
 import "./login.css";
 import "./contato.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,94 +28,9 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
-        <header>
-          <div className="topo-esquerdo">
-            <Link href="/"><img src="/imagens/logo.png" alt="logo" /></Link>
-            
-          </div>
-          <nav>
-            <div className="topo-direito">
-              <ul className="menu">
-                <li className="dropdown">
-                  <a href="#">
-                    WHAT WE DO <span className="arrow"></span>
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <Link href="/sobre">Sobre</Link>
-                    </li>
-                    <li>
-                      <Link href="/sobre/empresa">Empresa</Link>
-                    </li>
-                  </ul>
-                </li>
-
-                <li>
-                  <Link href="/sobre/contato">CONTATO</Link>
-                </li>
-                <li>
-                  <Link href="/">HOME</Link>
-                </li>
-                <li>
-                  <a href="#">CAREERS</a>
-                </li>
-              </ul>
-              <Link href="/sobre/login" className="btn">
-                LOGIN
-              </Link>
-            </div>
-          </nav>
-        </header>
+       <Header/>
         {children}
-        <footer>
-          {/* <div className="baixo-esquerdo">
-            <img src="/imagens/logo.png" alt="logo" />
-          </div> */}
-          <ul className="menuFooter">
-            <li className="top servicos">
-              <div className="title-footer">
-                <h3>Serviços</h3>
-              </div>
-              <ul className="options-footer servicos">
-                <li>Facebook & Instagram Ads</li>
-                <li>Social Media Marketing</li>
-                <li>Digital Advertising</li>
-                <li>Performance Marketing</li>
-                <li>Lead Generation</li>
-              </ul>
-            </li>
-
-            <li className="top redes">
-              <div className="title-footer">
-                <h3>Redes Sociais</h3>
-              </div>
-              <ul className="options-footer redes">
-                <li>Instagram</li>
-                <li>Facebook</li>
-                <li>Linkedin</li>
-              </ul>
-            </li>
-
-            <li className="top contato">
-              <div className="title-footer">
-                <h3>Contato</h3>
-              </div>
-              <ul className="options-footer contato">
-                <li>E-mail</li>
-                <li>Telefone</li>
-                <li>
-                  <Link href="#" className="btn-footer">
-                    WORK WITH US
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </ul>
-
-          <div className="legend">
-            <p>© 2026 Tier Up Privacy Policy Terms Instagram </p>
-          </div>
-        </footer>
+      <Footer/>
       </body>
     </html>
   );

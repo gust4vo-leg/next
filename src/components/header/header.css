@@ -1,0 +1,100 @@
+header {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  background: linear-gradient(70deg, #266bff, #052c81);
+  color: white;
+  gap: 25em;
+}
+
+.topo-esquerdo img {
+  width: 5vw;
+}
+
+.topo-direito {
+  display: flex;
+  gap: 50px;
+  text-align: center;
+  align-items: center;
+}
+
+nav .btn {
+  text-decoration: none;
+  color: white;
+  background: rgb(247, 101, 181);
+  border-radius: 18px;
+  padding: 10px 30px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: rgb(247, 101, 181);
+  transition: 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #2563e9;
+  border-radius: 8px;
+  list-style: none;
+  padding: 10px 0;
+  min-width: 180px;
+  display: none;
+}
+
+.dropdown-menu li {
+  padding: 10px 20px;
+}
+
+.dropdown-menu li:hover {
+  background: rgb(247, 101, 181);
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.arrow {
+  display: inline-block;
+  border: 1px solid white;
+  border-width: 0 2px 2px 0;
+  padding: 3px;
+  margin-left: 6px;
+  margin-bottom: 2px;
+  transform: rotate(45deg);
+}

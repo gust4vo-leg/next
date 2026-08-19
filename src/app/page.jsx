@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import BannerCTA from "@/components/bannerCTA";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -7,7 +8,8 @@ export default async function Home() {
 
   await sleep(3500);
 
-  throw new Error("Simulando um erro catastrófico!!!");
+  // throw new Error("Simulando um erro catastrófico!!!");
+
   return (
     <>
       <main>
@@ -78,6 +80,8 @@ export default async function Home() {
             </div>
           </div>
         </div>
+
+        <BannerCTA/>
       </main>
     </>
   );
