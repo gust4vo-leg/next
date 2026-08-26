@@ -33,7 +33,7 @@ export default function Header() {
               <Link href="/">HOME</Link>
             </li>
             <li>
-              <a href="#">CAREERS</a>
+              <Link href="/blogs">BLOG</Link>
             </li>
           </ul>
           <Link href="/sobre/login" className="btn">

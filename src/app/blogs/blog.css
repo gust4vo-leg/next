@@ -1,0 +1,15 @@
+.titleBlog {
+    text-align: center;
+    padding: 20px;
+    font-family: "Inter", sans-serif;
+    color: white;
+}
+
+.cardContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    width: 65vw;
+    margin: auto;
+    margin-bottom: 10rem;
+}
