@@ -15,6 +15,9 @@ export default function Ordens() {
   //VAMOS CRIAR UMA VARIAVEL PARA EXIBIR OS ERROS DE PREENCHIMENTO
   const [erro, setErro] = useState("");
 
+  //CONTAGEM DE CARACTERES
+  const limiteMaxCaracter = 100;
+  const limiteMinCaracter = 15;
   function cadastrarOrdem(event) {
     event.preventDefault(); //ISSO PREVINE RECARREGAR A PAG
 
@@ -44,11 +47,21 @@ export default function Ordens() {
     setEquipamento("");
     setDescricao("");
     setErro("");
+
+    const contarLetras = descricao.trim().length;
+
+    if (contarLetras < limiteMinCaracter) {
+      setErro(
+        `A descrição deve ter no minímo ${limiteMinCaracter} de caracter`,
+      );
+      return;
+    }
+    if (contarLetras > limiteMaxCaracter) {
+      setErro(
+        `A descrição deve ter no máximo ${limiteMaxCaracter} de caracter`,
+      );
+    }
   }
-
-  console.log(ordens);
-
-  
 
   return (
     <main>
@@ -84,12 +97,11 @@ export default function Ordens() {
           <textarea
             id="descricao"
             value={descricao}
+            maxLength={limiteMaxCaracter}
             placeholder="Descreva o problema"
             onChange={(event) => setDescricao(event.target.value)}
           />
-          <span>
-            {descricao.length}/{limiteMaxCaracter}
-          </span>
+          <span>{descricao.length}/{limiteMaxCaracter}</span>
         </div>
 
         <div>
