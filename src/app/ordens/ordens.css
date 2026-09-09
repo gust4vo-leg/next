@@ -1,0 +1,76 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;  
+  width: 50%;
+  margin: auto;
+  flex-direction: column;
+}
+
+main h1 {
+    text-align: center;
+    margin-top: 2rem;
+    color: white;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main form div {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+
+main form div span {
+    font-size: .7rem;
+    color: rgba(240, 255, 255, 0.63);
+}
+
+input {
+    width: 25vw;
+    padding: 10px 4px;
+    border-radius: 6px;
+    outline: none;
+    border: 1px solid transparent;
+}
+
+textarea {
+    width: 25vw;
+    height: 10vh;
+    resize: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+select {
+    width: 25vw;
+    padding: 10px 4px;
+    border-radius: 6px;
+    outline: none;
+}
+
+button {
+    margin-top: 3.5rem;
+    width: 25vw;
+    background: rgb(247, 101, 181);
+    border-radius: 6px;
+    padding: 10px 4px;
+    border: none;
+    color: white;
+}
+
+table {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+table thead tr {
+    color: rgb(247, 101, 181);
+}
