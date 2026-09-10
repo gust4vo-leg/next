@@ -49,15 +49,8 @@ textarea {
     padding: 5px 10px;
 }
 
-select {
-    width: 25vw;
-    padding: 10px 4px;
-    border-radius: 6px;
-    outline: none;
-}
-
-button {
-    margin-top: 3.5rem;
+.cadastrar {
+    margin-top: .5rem;
     width: 25vw;
     background: rgb(247, 101, 181);
     border-radius: 6px;
@@ -67,10 +60,53 @@ button {
 }
 
 table {
-    border: 1px solid white;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse; 
+  margin-top: 25px;
+  font-family: sans-serif;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  overflow: hidden; 
+  margin-bottom: 2rem;
 }
 
-table thead tr {
-    color: rgb(247, 101, 181);
+th {
+  background-color: rgb(247, 101, 181); 
+  color: white;
+  text-align: left;
+  padding: 12px 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0; 
+  color: #333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(247, 101, 181, 0.05); 
+}
+
+tbody tr:hover {
+  background-color: rgba(247, 101, 181, 0.1);
+}
+
+table button {
+  background-color: rgb(247, 101, 181);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  transition: background-color 0.2s ease;
+}
+
+table button:hover {
+  background-color: rgb(220, 80, 155); 
 }

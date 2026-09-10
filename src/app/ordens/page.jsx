@@ -10,7 +10,7 @@ export default function Ordens() {
   const [cliente, setCliente] = useState("");
   const [equipamento, setEquipamento] = useState("");
   const [descricao, setDescricao] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("aberta");
 
   //VAMOS CRIAR UMA VARIAVEL PARA EXIBIR OS ERROS DE PREENCHIMENTO
   const [erro, setErro] = useState("");
@@ -31,6 +31,20 @@ export default function Ordens() {
       return; //ISSO FAZ COM QUE A FUNÇÃO PARE
     }
 
+    const contarLetras = descricao.trim().length;
+
+    if (contarLetras < limiteMinCaracter) {
+      setErro(
+        `A descrição deve ter no minímo ${limiteMinCaracter} de caracter`,
+      );
+      return;
+    }
+    if (contarLetras > limiteMaxCaracter) {
+      setErro(
+        `A descrição deve ter no máximo ${limiteMaxCaracter} de caracter`,
+      );
+    }
+
     // UNIÃO DE CAMPOS
     const novaOrdem = {
       id: Date.now(),
@@ -47,20 +61,19 @@ export default function Ordens() {
     setEquipamento("");
     setDescricao("");
     setErro("");
+    setStatus("aberta");
+  }
 
-    const contarLetras = descricao.trim().length;
+  function fecharOrdem(id) {
+    const ordensAtualizadas = ordens.map((ordem) => {
+      if (ordem.id === id) {
+        return { ...ordem, status: "fechada" };
+      }
 
-    if (contarLetras < limiteMinCaracter) {
-      setErro(
-        `A descrição deve ter no minímo ${limiteMinCaracter} de caracter`,
-      );
-      return;
-    }
-    if (contarLetras > limiteMaxCaracter) {
-      setErro(
-        `A descrição deve ter no máximo ${limiteMaxCaracter} de caracter`,
-      );
-    }
+      return ordem;
+    });
+
+    setOrdens(ordensAtualizadas);
   }
 
   return (
@@ -101,19 +114,15 @@ export default function Ordens() {
             placeholder="Descreva o problema"
             onChange={(event) => setDescricao(event.target.value)}
           />
-          <span>{descricao.length}/{limiteMaxCaracter}</span>
-        </div>
-
-        <div>
-          <label htmlFor="status">Status: </label>
-          <select name="options" id="option">
-            <option value="aberta">Aberta</option>
-            <option value="fechada">Fechada</option>
-          </select>
+          <span>
+            {descricao.length}/{limiteMaxCaracter}
+          </span>
         </div>
 
         {erro != "" && <p>{erro}</p>}
-        <button type="submit">Cadastrar</button>
+        <button type="submit" className="cadastrar">
+          Cadastrar
+        </button>
       </form>
 
       <table>
@@ -127,12 +136,21 @@ export default function Ordens() {
         </thead>
 
         <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          {ordens.map((ordem) => (
+            <tr key={ordem.key}>
+              <td>{ordem.cliente}</td>
+              <td>{ordem.equipamento}</td>
+              <td>{ordem.descricao}</td>
+              <td>{ordem.status}</td>
+              <td>
+                {ordem.status === "aberta" && (
+                  <button onClick={() => fecharOrdem(ordem.id)}>
+                    Fechar Ordem
+                  </button>
+                )}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </main>
